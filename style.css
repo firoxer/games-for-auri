@@ -1,0 +1,28 @@
+:root {
+  --background2: #cdcdc8;
+  --background: #fdfdf8;
+  --foreground: #1b1c33;
+  font: 24px Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font: inherit;
+  margin: 0;
+  overflow: hidden;
+}
+
+#goback {
+  background-color: var(--background2);
+  border: none;
+  border-radius: 100%;
+  color: var(--foreground);
+  font-size: 32px;
+  height: 48px;
+  left: 1rem;
+  position: absolute;
+  top: 1rem;
+  width: 48px;
+  z-index: 9999;
+}

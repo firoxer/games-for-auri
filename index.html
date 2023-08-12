@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Games for Auri</title>
+
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      :root {
+        font-size: 36px;
+      }
+
+      body {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        justify-content: center;
+        margin: 0;
+        min-height: 100vh;
+        overflow: hidden;
+      }
+
+      button {
+        background: var(--background2);
+        border: none;
+        border-radius: 100%;
+        cursor: pointer;
+        font-size: 128px;
+        height: 8rem;
+        width: 8rem;
+      }
+
+      @media (max-width: 800px) {
+        body {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <a href="draw">
+      <button>&#x1F58A</button>
+    </a>
+
+    <a href="drum">
+      <button>&#x1F941</button>
+    </a>
+  </body>
+</html>
