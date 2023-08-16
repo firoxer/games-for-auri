@@ -1,0 +1,72 @@
+#draw canvas {
+  position: fixed;
+  z-index: -1; /* For buttons to appear on top */
+}
+
+#draw button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-user-select: none;
+  transition: border-radius 0.25s ease;
+  background-color: var(--foreground);
+  border-radius: 100%;
+  border: 0.5rem solid var(--background);
+  cursor: pointer;
+  height: 4rem;
+  user-select: none;
+  width: 4rem;
+}
+
+#draw button.selected {
+  border-radius: 20%;
+}
+
+#draw #brushes {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+
+  flex-direction: column;
+  height: 100%;
+  left: 2rem;
+}
+
+#draw #colors {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+
+  flex-direction: column;
+  height: 100%;
+  right: 2rem;
+}
+
+/* This is a bit wonky but it's to support prehistoric iOS Safari that doesn't support orientation */
+@media (orientation: portrait) {
+  #draw #brushes {
+    height: auto;
+    left: auto;
+
+    flex-direction: row-reverse;
+    left: 10%; /* Make way for the goback button */
+    top: 2rem;
+    width: 90%;
+  }
+
+  #draw #colors {
+    height: auto;
+    right: auto;
+
+    bottom: 2rem;
+    flex-direction: row;
+    width: 100%;
+  }
+}
+
+#draw #colors button {
+  background-color: currentcolor;
+}
+
+#draw #colors button.background {
+  border-color: var(--foreground);
+}

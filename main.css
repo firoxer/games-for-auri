@@ -17,8 +17,8 @@ body {
   background-color: var(--background2);
   border: none;
   border-radius: 100%;
+  box-sizing: border-box;
   color: var(--foreground);
-  font-size: 32px;
   height: 48px;
   left: 1rem;
   position: absolute;

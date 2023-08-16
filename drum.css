@@ -1,0 +1,109 @@
+#drum {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  min-height: 100vh;
+  touch-action: manipulation;
+}
+
+@media (max-width: 800px) {
+  #drum {
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+#drum button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-user-select: none;
+  transition: background-color 0.1s ease, border-color 0.1 ease;
+  background-color: #1b1c33;
+  color: white; /* temp */
+  border-radius: 100%;
+  box-sizing: border-box;
+  border: 1vmin solid white;
+  cursor: pointer;
+  user-select: none;
+}
+
+#drum button.playing {
+  background-color: #fdfdf8 !important;
+  border-color: #1b1c33 !important;
+  color: #1b1c33 !important;
+}
+
+#drums {
+  height: 100vmin;
+  overflow: hidden;
+  position: relative;
+  width: 100vmin;
+}
+
+#drums button {
+  font-size: 5vmin; /* temp */
+  position: absolute;
+}
+
+#drum #hihat {
+  background-color: #2d93dd;
+  left: calc(15% - 12.5vmin);
+  top: calc(75% - 12.5vmin);
+  width: 25vmin;
+  height: 25vmin;
+}
+
+#drum #snare {
+  background-color: #d32734;
+  left: calc(25% - 12.5vmin);
+  top: calc(50% - 12.5vmin);
+  width: 25vmin;
+  height: 25vmin;
+}
+
+#drum #crash {
+  background-color: #da7d22;
+  left: calc(20% - 15vmin);
+  top: calc(20% - 15vmin);
+  width: 30vmin;
+  height: 30vmin;
+}
+
+#drum #kick {
+  background-color: #e6da29;
+  left: calc(50% - 20vmin);
+  top: calc(75% - 20vmin);
+  width: 40vmin;
+  height: 40vmin;
+}
+
+#drum #ride {
+  background-color: #28c641;
+  left: calc(85% - 15vmin);
+  top: calc(25% - 15vmin);
+  width: 30vmin;
+  height: 30vmin;
+}
+
+#drum #high {
+  background-color: #444444;
+  left: calc(45% - 10vmin);
+  top: calc(35% - 10vmin);
+  width: 20vmin;
+  height: 20vmin;
+}
+
+#drum #mid {
+  background-color: #777777;
+  left: calc(65% - 12.5vmin);
+  top: calc(45% - 12.5vmin);
+  width: 25vmin;
+  height: 25vmin;
+}
+
+#drum #low {
+  background-color: #aaaaaa;
+  left: calc(85% - 15vmin);
+  top: calc(65% - 15vmin);
+  width: 30vmin;
+  height: 30vmin;
+}
