@@ -11,9 +11,4 @@ Open a shell in the repository root, run `python3 -m http.server`, navigate to `
 Notes
 ---
 
-All the Javascript is written to be compatible with iOS 9 Safari.
-
-License
----
-
-MIT
+All the Javascript is written to be compatible with iOS 9 Safari without transpilation, i.e. it looks funny.
