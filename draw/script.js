@@ -62,6 +62,7 @@ window.draw = function(rootElement) {
   const colors = [ 
     '#1b1c33',
     '#d32734',
+    '#954600',
     '#da7d22',
     '#e6da29',
     '#28c641',
