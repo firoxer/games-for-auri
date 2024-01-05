@@ -1,39 +1,91 @@
-function initDraw() {
-  const permanentCanvas = document.getElementById('permanentCanvas');
+window.draw = function(rootElement) {
+  const brushesContainer = document.createElement('div');
+  brushesContainer.classList.add('brushes');
+  rootElement.appendChild(brushesContainer);
+
+  const colorsContainer = document.createElement('div');
+  colorsContainer.classList.add('colors');
+  rootElement.appendChild(colorsContainer);
+
+  const permanentCanvas = document.createElement('canvas');
   const permanentContext = permanentCanvas.getContext('2d');
+  rootElement.appendChild(permanentCanvas);
 
-  const workingCanvas = document.getElementById('workingCanvas');
+  const workingCanvas = document.createElement('canvas');
   const workingContext = workingCanvas.getContext('2d');
+  rootElement.appendChild(workingCanvas);
 
-  const brushesContainer = document.getElementById('brushes');
-  const colorsContainer = document.getElementById('colors');
+  const createBrushSelection = function(size) {
+    return function() {
+      event.preventDefault();
+      Array.from(brushesContainer.children).forEach(function(child) {
+        child.classList.remove('selected');
+      });
+        
+      workingContext.lineWidth = size;
 
-  window.selectBrush = function(size) {
-    event.preventDefault();
-    Array.from(brushes.children).forEach(function(child) {
-      child.classList.remove('selected');
-    });
-      
-    workingContext.lineWidth = size;
+      event.target.classList.add('selected');
+    };
+  };
 
-    event.target.classList.add('selected');
-  }
+  const brushes = [
+    { drawSize: 100, buttonSize: '8rem' },
+    { drawSize: 50, buttonSize: '6rem' },
+    { drawSize: 20, buttonSize: '4rem' }
+  ];
+
+  const brushButtons = brushes.map(function(brush) {
+    const button = document.createElement('button');
+    button.style.height = brush.buttonSize;
+    button.style.width = brush.buttonSize;
+    button.onclick = createBrushSelection(brush.drawSize);
+    button.ontouchstart = createBrushSelection(brush.drawSize);
+    brushesContainer.appendChild(button);
+
+    return button;
+  });
+
+  const createColorSelection = function(color) {
+    return function() {
+      event.preventDefault();
+      Array.from(colorsContainer.children).forEach(function(child) {
+        child.classList.remove('selected');
+      });
+        
+      workingContext.fillStyle = color;
+      workingContext.strokeStyle = color;
+
+      event.target.classList.add('selected');
+    };
+  };
+
+  const colors = [ 
+    '#1b1c33',
+    '#d32734',
+    '#da7d22',
+    '#e6da29',
+    '#28c641',
+    '#2d93dd',
+    '#7b53ad',
+    '#fdfdf8',
+  ];
+
+  const colorButtons = colors.map(function(color, index) {
+    const button = document.createElement('button');
+    button.style.color = color;
+    button.onclick = createColorSelection(color);
+    button.ontouchstart = createColorSelection(color);
+    colorsContainer.appendChild(button);
+
+    if (index === colors.length - 1) { // FIXME
+      button.classList.add('background');
+    }
+
+    return button;
+  });
 
   // Preselect medium brush
   brushesContainer.children[1].click();
-
-  window.selectColor = function() {
-    event.preventDefault();
-    Array.from(colorsContainer.children).forEach(function(child) {
-      child.classList.remove('selected');
-    });
-      
-    const color = event.target.style.color;
-    workingContext.fillStyle = color;
-    workingContext.strokeStyle = color;
-
-    event.target.classList.add('selected');
-  };
 
   // Preselect the first color, i.e. black
   colorsContainer.children[0].click();
@@ -171,4 +223,4 @@ function initDraw() {
   drawElement.addEventListener('touchend', function (e) {
     stopDrawing();
   });
-}
+};

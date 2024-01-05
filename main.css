@@ -13,7 +13,7 @@ body {
   overflow: hidden;
 }
 
-#goback {
+#switcher {
   background-color: var(--background2);
   border: none;
   border-radius: 100%;

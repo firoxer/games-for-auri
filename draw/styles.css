@@ -20,7 +20,7 @@
   border-radius: 20%;
 }
 
-#draw #brushes {
+#draw .brushes {
   align-items: center;
   display: flex;
   justify-content: space-around;
@@ -31,7 +31,7 @@
   left: 2rem;
 }
 
-#draw #colors {
+#draw .colors {
   display: flex;
   justify-content: space-around;
   position: fixed;
@@ -43,7 +43,7 @@
 
 /* This is a bit wonky but it's to support prehistoric iOS Safari that doesn't support orientation */
 @media (orientation: portrait) {
-  #draw #brushes {
+  #draw .brushes {
     height: auto;
     left: auto;
 
@@ -53,7 +53,7 @@
     width: 90%;
   }
 
-  #draw #colors {
+  #draw .colors {
     height: auto;
     right: auto;
 
@@ -63,10 +63,10 @@
   }
 }
 
-#draw #colors button {
+#draw .colors button {
   background-color: currentcolor;
 }
 
-#draw #colors button.background {
+#draw .colors button.background {
   border-color: var(--foreground);
 }

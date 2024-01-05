@@ -7,68 +7,47 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
 
     <link rel="stylesheet" href="main.css" />
-    <link rel="stylesheet" href="drum.css" />
-    <link rel="stylesheet" href="draw.css" />
+    <link rel="stylesheet" href="drum/styles.css" />
+    <link rel="stylesheet" href="draw/styles.css" />
 
-    <script src="drum.js"></script>
-    <script src="draw.js"></script>
+    <script src="drum/script.js"></script>
+    <script src="draw/script.js"></script>
 
     <script>
       window.onload = function() {
-        initDrum();
-        initDraw();
+        const drumElement = document.getElementById('drum');
+        const drawElement = document.getElementById('draw');
 
-        document.getElementById('goback').onclick = function() {
-          const drum = document.getElementById('drum');
-          const draw = document.getElementById('draw');
-          if (drum.style.display !== 'none') {
-            drum.style.display = 'none';
-            draw.style.display = 'flex';
-          } else if (draw.style.display !== 'none') {
-            drum.style.display = 'flex';
-            draw.style.display = 'none';
-          }
+        drum(drumElement);
+        draw(drawElement);
+
+        const gameElements = [drumElement, drawElement];
+        var currentGameIndex = 0;
+
+        const switcher = document.getElementById('switcher');
+
+        switcher.onclick = function() {
+          currentGameIndex = (currentGameIndex + 1) % gameElements.length;
+
+          gameElements.forEach(function(element) {
+            element.style.display = 'none';
+          });
+
+          gameElements[currentGameIndex].style.display = 'flex';
         };
+
+        switcher.click();
       }
     </script>
   </head>
 
   <body>
-    <button id="goback"></button>
+    <button id="switcher"></button>
 
     <div id="drum">
-      <div id="drums">
-        <button id="hihat">hihat</button>
-        <button id="snare">snare</button>
-        <button id="ride">ride</button>
-        <button id="kick">kick</button>
-        <button id="crash">crash</button>
-        <button id="high">high</button>
-        <button id="mid">mid</button>
-        <button id="low">low</button>
-      </div>
     </div>
 
     <div id="draw">
-      <div id="brushes">
-        <button style="width: 8rem; height: 8rem;" onclick="selectBrush(100)" ontouchstart="selectBrush(100)"></button>
-        <button style="width: 6rem; height: 6rem;" onclick="selectBrush(50)" ontouchstart="selectBrush(50)"></button>
-        <button style="width: 4rem; height: 4rem;" onclick="selectBrush(20)" ontouchstart="selectBrush(20)"></button>
-      </div>
-
-      <div id="colors">
-        <button style="color: #1b1c33" onclick="selectColor()" ontouchstart="selectColor()"></button>
-        <button style="color: #d32734" onclick="selectColor()" ontouchstart="selectColor()"></button>
-        <button style="color: #da7d22" onclick="selectColor()" ontouchstart="selectColor()"></button>
-        <button style="color: #e6da29" onclick="selectColor()" ontouchstart="selectColor()"></button>
-        <button style="color: #28c641" onclick="selectColor()" ontouchstart="selectColor()"></button>
-        <button style="color: #2d93dd" onclick="selectColor()" ontouchstart="selectColor()"></button>
-        <button style="color: #7b53ad" onclick="selectColor()" ontouchstart="selectColor()"></button>
-        <button style="color: #fdfdf8" onclick="selectColor()" ontouchstart="selectColor()" class="background"></button>
-      </div>
-
-      <canvas id="permanentCanvas"></canvas>
-      <canvas id="workingCanvas"></canvas>
     </div>
   </body>
 </html>

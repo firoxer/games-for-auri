@@ -44,7 +44,7 @@
   position: absolute;
 }
 
-#drum #hihat {
+#drum .hihat {
   background-color: #2d93dd;
   left: calc(15% - 12.5vmin);
   top: calc(75% - 12.5vmin);
@@ -52,7 +52,7 @@
   height: 25vmin;
 }
 
-#drum #snare {
+#drum .snare {
   background-color: #d32734;
   left: calc(25% - 12.5vmin);
   top: calc(50% - 12.5vmin);
@@ -60,7 +60,7 @@
   height: 25vmin;
 }
 
-#drum #crash {
+#drum .crash {
   background-color: #da7d22;
   left: calc(20% - 15vmin);
   top: calc(20% - 15vmin);
@@ -68,7 +68,7 @@
   height: 30vmin;
 }
 
-#drum #kick {
+#drum .kick {
   background-color: #e6da29;
   left: calc(50% - 20vmin);
   top: calc(75% - 20vmin);
@@ -76,7 +76,7 @@
   height: 40vmin;
 }
 
-#drum #ride {
+#drum .ride {
   background-color: #28c641;
   left: calc(85% - 15vmin);
   top: calc(25% - 15vmin);
@@ -84,7 +84,7 @@
   height: 30vmin;
 }
 
-#drum #high {
+#drum .high {
   background-color: #444444;
   left: calc(45% - 10vmin);
   top: calc(35% - 10vmin);
@@ -92,7 +92,7 @@
   height: 20vmin;
 }
 
-#drum #mid {
+#drum .mid {
   background-color: #777777;
   left: calc(65% - 12.5vmin);
   top: calc(45% - 12.5vmin);
@@ -100,7 +100,7 @@
   height: 25vmin;
 }
 
-#drum #low {
+#drum .low {
   background-color: #aaaaaa;
   left: calc(85% - 15vmin);
   top: calc(65% - 15vmin);
