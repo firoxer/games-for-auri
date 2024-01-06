@@ -29,9 +29,9 @@ window.draw = function(rootElement) {
   };
 
   const brushes = [
-    { drawSize: 100, buttonSize: '8rem' },
-    { drawSize: 50, buttonSize: '6rem' },
-    { drawSize: 20, buttonSize: '4rem' }
+    { drawSize: 100, buttonSize: '16vmin' },
+    { drawSize: 50, buttonSize: '12vmin' },
+    { drawSize: 20, buttonSize: '8vmin' }
   ];
 
   const brushButtons = brushes.map(function(brush) {
