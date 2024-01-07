@@ -1,5 +1,4 @@
 :root {
-  --background2: #cdcdc8;
   --background: #fdfdf8;
   --foreground: #1b1c33;
   font: 24px Helvetica, Arial, sans-serif;
@@ -14,11 +13,17 @@ body {
 }
 
 #switcher {
-  background-color: var(--background2);
+  background:
+    radial-gradient(circle at top left,     rgba(255, 0, 0, 1.0),     rgba(255, 0, 0, 0.0)     6vmin),
+    radial-gradient(circle at top right,    rgba(0, 0, 255, 1.0),     rgba(0, 0, 255, 0.0)     6vmin),
+    radial-gradient(circle at bottom left,  rgba(255, 255, 0, 1.0),   rgba(255, 255, 0, 0.0)   6vmin),
+    radial-gradient(circle at bottom right, rgba(0, 255, 0, 1.0),     rgba(0, 255, 0, 0.0)     6vmin),
+    radial-gradient(circle at top left,     rgba(255, 255, 255, 1.0), rgba(255, 255, 255, 1.0) 6vmin);
   border: none;
   border-radius: 100%;
   box-sizing: border-box;
   color: var(--foreground);
+  cursor: pointer;
   height: 6vmin;
   left: 2vmin;
   position: absolute;
